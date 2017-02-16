@@ -1,0 +1,8 @@
+#!/bin/sh
+
+
+if [ "$#" -gt 0 ] && [ -d $1 ]; then
+  echo "Optimizing PNG files..."
+  find $@ -iname '*.png' -exec optipng -o6 -preserve '{}' \;
+  echo "Done."
+fi

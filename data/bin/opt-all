@@ -1,0 +1,8 @@
+#!/bin/sh
+
+
+if [ "$#" -gt 0 ] && [ -d $1 ]; then
+  opt-jpg $@
+  opt-png $@
+  opt-gif $@
+fi

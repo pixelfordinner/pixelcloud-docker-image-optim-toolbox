@@ -1,0 +1,8 @@
+#!/bin/sh
+
+
+if [ "$#" -gt 0 ] && [ -d $1 ]; then
+  echo "Optimizing JPG/JPEG files..."
+  find $* -iname '*.jpeg' -o -iname '*.jpg' | xargs /usr/bin/jpegoptim -o -p -t --strip-all --all-progressive
+  echo "Done."
+fi
