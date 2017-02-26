@@ -3,6 +3,6 @@
 
 if [ "$#" -gt 0 ] && [ -d $1 ]; then
   echo "Optimizing GIF files..."
-  find $@ -iname '*.gif' -exec gifsicle -IIb -O3 '{}' \;
+  $(which find) $@ -iname '*.gif' -exec gifsicle -IIb -O3 '{}' \;
   echo "Done."
 fi
